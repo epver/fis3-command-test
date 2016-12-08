@@ -1,0 +1,28 @@
+{
+  "name": "fis3-command-test",
+  "version": "1.0.0",
+  "description": "A test server for fis3 command plugin!",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheneyliu/fis3-command-test.git"
+  },
+  "keywords": [
+    "fis3",
+    "fis3-server",
+    "fis3-test",
+    "server"
+  ],
+  "author": "cheneyliu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cheneyliu/fis3-command-test/issues"
+  },
+  "homepage": "https://github.com/cheneyliu/fis3-command-test#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "http-proxy-middleware": "^0.17.3",
+    "morgan": "^1.7.0"
+  }
+}
