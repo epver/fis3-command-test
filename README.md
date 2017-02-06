@@ -23,28 +23,18 @@ module.exports = {
   // http-proxy-middleware 配置使用
   proxy: {
     '/api_oauth**': {
-      target: 'http://192.168.254.1:7100',
+      target: 'http://127.0.0.1:8081',
       changeOrigin: false,
       logLevel: 'debug',
       pathRewrite: {
         '^/api_oauth(.*?)': ''
       }
-    },
-    '/api_inner**': {
-      target: 'http://192.168.254.1:7200',
-      changeOrigin: false,
-      pathRewrite: {
-        '^/api_inner(.*?)': ''
-      }
-    },
-    '/api_outer**': {
-      target: 'http://192.168.254.1:7300',
-      changeOrigin: false,
-      pathRewrite: {
-        '^/api_outer(.*?)': ''
-      }
     }
-  }
+  },
+  // connect-history-api-fallback 配置路由重写规则 (其中from为正则规则)
+  router: [
+    { from: '^\/login$', to: '/html/login/login.html' }
+  ]
 }
 
 ```
@@ -63,3 +53,7 @@ fis.config.set('project.test', 'test-config.js')
 ### 插件由来
 
 由于自己目前公司的项目,处理的接口比较奇葩, 所以根据 fis3-command-server 开发了一个可以反向代理的测试服务器!
+
+### 1.0.1 新增
+
+- 新增路由编写,用于后面处理纯前端的项目,使用 `connect-history-api-fallback` 包创建路由重写测试方案
